@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<style>
+
+	body, html { 
+    	height: 100%; 
+        overflow: hidden; 
+        padding: 0; 
+        margin: 0; 
+	}
+	#main {
+		width: 66%;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	#p1 {
+		height: 33%;
+		width: 17%;
+		position: absolute;
+		top: 0px;
+		left: 66%;
+	}
+	#p2 {
+		height: 33%;
+		width: 17%;
+		position: absolute;
+		top: 0px;
+		left: 83%;
+	}
+	#p3 {
+		height: 33%;
+		width: 17%;
+		position: absolute;
+		top: 33%;
+		left: 66%;
+	}
+	#p4 {
+		height: 33%;
+		width: 17%;
+		position: absolute;
+		top: 33%;
+		left: 83%;
+	}
+	#p5 {
+		height: 33%;
+		width: 17%;
+		position: absolute;
+		top: 66%;
+		left: 66%;
+	}
+	#p6 {
+		height: 33%;
+		width: 17%;
+		position: absolute;
+		top: 66%;
+		left: 83%;
+	}
+	#video {
+		visibility: hidden;
+	}
+	#title1 {
+		font-family: sans-serif;
+		font-size: 100px;
+		text-align: center;
+		background-color: red;
+		color: white;
+	}
+	#title2 {
+		font-family: sans-serif;
+		font-size: 30px;
+		text-align: center;
+		color: black;
+	}
+</style>
+<title>News</title>
+</head>
+
+<body>
+<div id="video">
+<div id="main"></div>
+<div id="p1"></div>
+<div id="p2"></div>
+<div id="p3"></div>
+<div id="p4"></div>
+<div id="p5"></div>
+<div id="p6"></div>
+</div>
+<div>
+<h1 id="title1">University Liggett School Multicutural TV Program</h1>
+<h1 id="title2">Made by Tony Pan Class of 2018</h1>
+</div>
+<script async src="http://www.youtube.com/iframe_api"></script>
+<script>
+var doneCount = 0;
+function checkIfDone(){
+	doneCount++;
+	if(doneCount == 7){
+		main.unMute();
+		setTimeout(function(){document.getElementById("video").style.visibility = "visible"}, 5000);
+	}
+}
+ function onYouTubeIframeAPIReady() {
+  player1 = new YT.Player('p1', {
+    videoId: 'Y8Wy9LXCapw',<!-- ID0 -->
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 1,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 0,  // Hide the Youtube Logo
+      loop: 0,            // Run the video in a loop
+      fs: 0,              // Hide the full screen button
+      cc_load_policy: 0, // Hide closed captions
+      iv_load_policy: 3,  // Hide the Video Annotations
+      autohide: 0         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+		checkIfDone();
+      },
+	  onStateChange: function(e) {
+		  if(e.data == YT.PlayerState.PAUSED){
+			console.log("CLICK from "+e.target.a.id);
+			var a = document.getElementById("main");
+			var b = document.getElementById(e.target.a.id);
+			a.id = e.target.a.id;
+			b.id = "main";
+			if(main){
+				main.mute();
+			}
+			e.target.unMute();
+			main = e.target;
+			main.playVideo();
+			main.setPlaybackQuality("highres");
+		  }
+	  }
+    }
+  });
+  player2 = new YT.Player('p2', {
+    videoId: 'hL0sEdVJs3U',<!-- ID1 -->
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 1,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 0,  // Hide the Youtube Logo
+      loop: 0,            // Run the video in a loop
+      fs: 0,              // Hide the full screen button
+      cc_load_policy: 0, // Hide closed captions
+      iv_load_policy: 3,  // Hide the Video Annotations
+      autohide: 0         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+		checkIfDone();
+      },
+	  onStateChange: function(e) {
+		  if(e.data == YT.PlayerState.PAUSED){
+			console.log("CLICK from "+e.target.a.id);
+			var a = document.getElementById("main");
+			var b = document.getElementById(e.target.a.id);
+			a.id = e.target.a.id;
+			b.id = "main";
+			if(main){
+				main.mute();
+			}
+			e.target.unMute();
+			main = e.target;
+			main.playVideo();
+			main.setPlaybackQuality("highres");
+		  }
+	  }
+    }
+  });
+  player3 = new YT.Player('p3', {
+    videoId: 'kFpzwhYhNg4',<!-- ID2 -->
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 1,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 0,  // Hide the Youtube Logo
+      loop: 0,            // Run the video in a loop
+      fs: 0,              // Hide the full screen button
+      cc_load_policy: 0, // Hide closed captions
+      iv_load_policy: 3,  // Hide the Video Annotations
+      autohide: 0         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+		checkIfDone();
+      },
+	  onStateChange: function(e) {
+		if(e.data == YT.PlayerState.PAUSED){
+			console.log("CLICK from "+e.target.a.id);
+			var a = document.getElementById("main");
+			var b = document.getElementById(e.target.a.id);
+			a.id = e.target.a.id;
+			b.id = "main";
+			if(main){
+				main.mute();
+			}
+			e.target.unMute();
+			main = e.target;
+			main.playVideo();
+			main.setPlaybackQuality("highres");
+		  }
+	  }
+    }
+  });
+  player4 = new YT.Player('p4', {
+    videoId: 'gFMaxP6cHh8',<!-- ID3 -->
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 1,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 0,  // Hide the Youtube Logo
+      loop: 0,            // Run the video in a loop
+      fs: 0,              // Hide the full screen button
+      cc_load_policy: 0, // Hide closed captions
+      iv_load_policy: 3,  // Hide the Video Annotations
+      autohide: 0         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+		checkIfDone();
+      },
+	  onStateChange: function(e) {
+		if(e.data == YT.PlayerState.PAUSED){
+			console.log("CLICK from "+e.target.a.id);
+			var a = document.getElementById("main");
+			var b = document.getElementById(e.target.a.id);
+			a.id = e.target.a.id;
+			b.id = "main";
+			if(main){
+				main.mute();
+			}
+			e.target.unMute();
+			main = e.target;
+			main.playVideo();
+			main.setPlaybackQuality("highres");
+		  }
+	  }
+    }
+  });
+  player5 = new YT.Player('p5', {
+    videoId: '1-DHBk-tw6E',<!-- ID4 -->
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 1,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 0,  // Hide the Youtube Logo
+      loop: 0,            // Run the video in a loop
+      fs: 0,              // Hide the full screen button
+      cc_load_policy: 0, // Hide closed captions
+      iv_load_policy: 3,  // Hide the Video Annotations
+      autohide: 0         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+		checkIfDone();
+      },
+	  onStateChange: function(e) {
+		if(e.data == YT.PlayerState.PAUSED){
+			console.log("CLICK from "+e.target.a.id);
+			var a = document.getElementById("main");
+			var b = document.getElementById(e.target.a.id);
+			a.id = e.target.a.id;
+			b.id = "main";
+			if(main){
+				main.mute();
+			}
+			e.target.unMute();
+			main = e.target;
+			main.playVideo();
+			main.setPlaybackQuality("highres");
+		  }
+	  }
+    }
+  });
+  player6 = new YT.Player('p6', {
+    videoId: 'K_6mqVcUwzg',<!-- ID5 -->
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 1,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 0,  // Hide the Youtube Logo
+      loop: 0,            // Run the video in a loop
+      fs: 0,              // Hide the full screen button
+      cc_load_policy: 0, // Hide closed captions
+      iv_load_policy: 3,  // Hide the Video Annotations
+      autohide: 0         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+		checkIfDone();
+      },
+	  onStateChange: function(e) {
+		if(e.data == YT.PlayerState.PAUSED){
+			console.log("CLICK from "+e.target.a.id);
+			var a = document.getElementById("main");
+			var b = document.getElementById(e.target.a.id);
+			a.id = e.target.a.id;
+			b.id = "main";
+			if(main){
+				main.mute();
+			}
+			e.target.unMute();
+			main = e.target;
+			main.playVideo();
+			main.setPlaybackQuality("highres");
+		  }
+	  }
+    }
+  });
+  main = new YT.Player('main', {
+    videoId: 'wwMDvPCGeE0',<!-- ID6 -->
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 1,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 0,  // Hide the Youtube Logo
+      loop: 0,            // Run the video in a loop
+      fs: 0,              // Hide the full screen button
+      cc_load_policy: 0, // Hide closed captions
+      iv_load_policy: 3,  // Hide the Video Annotations
+      autohide: 0         // Hide video controls when playing
+    },
+    events: {
+	  onReady: function(e) {
+		main = e.target;
+		e.target.mute();
+		checkIfDone();
+	  },
+	  onStateChange: function(e) {
+		if(e.data == YT.PlayerState.PAUSED){
+			console.log("CLICK from "+e.target.a.id);
+			var a = document.getElementById("main");
+			var b = document.getElementById(e.target.a.id);
+			a.id = e.target.a.id;
+			b.id = "main";
+			if(main){
+				main.mute();
+			}
+			e.target.unMute();
+			main = e.target;
+			main.playVideo();
+			main.setPlaybackQuality("highres");
+		  }
+	  }
+    }
+  });
+ }
+</script>
+</body>
+</html>
