@@ -40,7 +40,7 @@ Want to contribute? Great!
 
 MulticulturalTV uses Java and HTML. We are looking for more YouTube channels that legally stream international news 24/7. We would love to hear any advice or complaint from you about this program.
 
-### Todos
+### To-dos
 
  - Find more links
  - Improve User Experience
