@@ -1,4 +1,4 @@
-
+// TODO: Rewrite without ACM library
 import java.io.*;
 import java.util.*;
 import acm.program.*;
