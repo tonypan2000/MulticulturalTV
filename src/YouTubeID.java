@@ -1,4 +1,4 @@
-
+// TODO: Rewrite without ACM library
 import java.io.*;
 import java.util.*;
 import acm.program.*;
@@ -17,13 +17,10 @@ public class YouTubeID extends Program {
 
 	public YouTubeID() {
 		links = new String[NUM_LINKS];
-		links[0] = "";
-		links[1] = "";
-		links[2] = "";
-		links[3] = "";
-		links[4] = "";
-		links[5] = "";
-		links[6] = "";
+		for (int i = 0; i < NUM_LINKS; i++) {
+			links[i] = "";
+		}
+		
 		file = "";
 	}
 
@@ -53,6 +50,7 @@ public class YouTubeID extends Program {
 	}
 
 	private void findLinks() {
+		// TODO: Need to replace all this with a loop
 		Scanner code = new Scanner(file);
 		String currentLine = "";
 		currentLine = code.nextLine();
@@ -104,7 +102,8 @@ public class YouTubeID extends Program {
 	public String[] showLinks() {
 		return links;
 	}
-
+	
+	// TODO: Need to replace all these functions with a loop (will work with any # of links)
 	public String change1(String url) {
 		Scanner code = new Scanner(file);
 		String currentLine = code.nextLine();
