@@ -50,6 +50,7 @@ public class YouTubeID extends Program {
 	}
 
 	private void findLinks() {
+		// TODO: Need to replace all this with a loop
 		Scanner code = new Scanner(file);
 		String currentLine = "";
 		currentLine = code.nextLine();
@@ -101,7 +102,8 @@ public class YouTubeID extends Program {
 	public String[] showLinks() {
 		return links;
 	}
-
+	
+	// TODO: Need to replace all these functions with a loop (will work with any # of links)
 	public String change1(String url) {
 		Scanner code = new Scanner(file);
 		String currentLine = code.nextLine();
