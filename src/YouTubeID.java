@@ -17,13 +17,10 @@ public class YouTubeID extends Program {
 
 	public YouTubeID() {
 		links = new String[NUM_LINKS];
-		links[0] = "";
-		links[1] = "";
-		links[2] = "";
-		links[3] = "";
-		links[4] = "";
-		links[5] = "";
-		links[6] = "";
+		for (int i = 0; i < NUM_LINKS; i++) {
+			links[i] = "";
+		}
+		
 		file = "";
 	}
 
