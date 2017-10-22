@@ -1,4 +1,4 @@
-
+// TODO: Remove ACM dependencies
 import java.io.*;
 import java.util.*;
 import acm.program.*;
@@ -17,13 +17,10 @@ public class YouTubeID extends Program {
 
 	public YouTubeID() {
 		links = new String[NUM_LINKS];
-		links[0] = "";
-		links[1] = "";
-		links[2] = "";
-		links[3] = "";
-		links[4] = "";
-		links[5] = "";
-		links[6] = "";
+		for (int i = 0; i < NUM_LINKS; i++) {
+			links[i] = "";
+		}
+		
 		file = "";
 	}
 
@@ -48,6 +45,7 @@ public class YouTubeID extends Program {
 		while (HTMLReader.hasNextLine()) {
 			file = file + "\n" + HTMLReader.nextLine();
 		}
+		
 		file = file.replaceAll("https", "http");
 		return file;
 	}
@@ -56,42 +54,50 @@ public class YouTubeID extends Program {
 		Scanner code = new Scanner(file);
 		String currentLine = "";
 		currentLine = code.nextLine();
+		
+		// TODO: Can all of these be replaced by a comples loop?
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID0 -->")) {
 			currentLine = code.nextLine();
 		}
 		for (int i = 0; i < NUM_CHAR; i++) {
 			links[0] += currentLine.charAt(14 + i);
 		}
+		
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID1 -->")) {
 			currentLine = code.nextLine();
 		}
 		for (int i = 0; i < NUM_CHAR; i++) {
 			links[1] += currentLine.charAt(14 + i);
 		}
+		
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID2 -->")) {
 			currentLine = code.nextLine();
 		}
 		for (int i = 0; i < NUM_CHAR; i++) {
 			links[2] += currentLine.charAt(14 + i);
 		}
+		
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID3 -->")) {
 			currentLine = code.nextLine();
 		}
 		for (int i = 0; i < NUM_CHAR; i++) {
 			links[3] += currentLine.charAt(14 + i);
 		}
+		
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID4 -->")) {
 			currentLine = code.nextLine();
 		}
 		for (int i = 0; i < NUM_CHAR; i++) {
 			links[4] += currentLine.charAt(14 + i);
 		}
+		
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID5 -->")) {
 			currentLine = code.nextLine();
 		}
 		for (int i = 0; i < NUM_CHAR; i++) {
 			links[5] += currentLine.charAt(14 + i);
 		}
+		
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID6 -->")) {
 			currentLine = code.nextLine();
 		}
@@ -105,12 +111,14 @@ public class YouTubeID extends Program {
 		return links;
 	}
 
+	// TODO: Can all these functions be replaced by a loop?
 	public String change1(String url) {
 		Scanner code = new Scanner(file);
 		String currentLine = code.nextLine();
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID0 -->")) {
 			currentLine = code.nextLine();
 		}
+		
 		String newLine = "    videoId: '" + getID(url) + "',<!-- ID0 -->";
 		code.close();
 		file = file.replace(currentLine, newLine);
@@ -125,6 +133,7 @@ public class YouTubeID extends Program {
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID1 -->")) {
 			currentLine = code.nextLine();
 		}
+		
 		String newLine = "    videoId: '" + getID(url) + "',<!-- ID1 -->";
 		code.close();
 		file = file.replace(currentLine, newLine);
@@ -139,6 +148,7 @@ public class YouTubeID extends Program {
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID2 -->")) {
 			currentLine = code.nextLine();
 		}
+		
 		String newLine = "    videoId: '" + getID(url) + "',<!-- ID2 -->";
 		code.close();
 		file = file.replace(currentLine, newLine);
@@ -153,6 +163,7 @@ public class YouTubeID extends Program {
 		while (code.hasNextLine() && !thisLine.contains("<!-- ID3 -->")) {
 			thisLine = code.nextLine();
 		}
+		
 		String newLine = "    videoId: '" + getID(url) + "',<!-- ID3 -->";
 		code.close();
 		file = file.replace(thisLine, newLine);
@@ -167,6 +178,7 @@ public class YouTubeID extends Program {
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID4 -->")) {
 			currentLine = code.nextLine();
 		}
+		
 		String newLine = "    videoId: '" + getID(url) + "',<!-- ID4 -->";
 		code.close();
 		file = file.replace(currentLine, newLine);
@@ -181,6 +193,7 @@ public class YouTubeID extends Program {
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID5 -->")) {
 			currentLine = code.nextLine();
 		}
+		
 		String newLine = "    videoId: '" + getID(url) + "',<!-- ID5 -->";
 		code.close();
 		file = file.replace(currentLine, newLine);
@@ -195,6 +208,7 @@ public class YouTubeID extends Program {
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID6 -->")) {
 			currentLine = code.nextLine();
 		}
+		
 		String newLine = "    videoId: '" + getID(url) + "',<!-- ID6 -->";
 		code.close();
 		file = file.replace(currentLine, newLine);
@@ -208,12 +222,14 @@ public class YouTubeID extends Program {
 		for (int i = 0; i < NUM_CHAR; i++) {
 			ID += html.charAt(32 + i);
 		}
+		
 		return ID;
 	}
 
 	private void update() {
 		try {
 			File fold = new File("res/tv.html");
+			// What purpose does this have?
 			fold.delete();
 			File fnew = new File("res/tv.html");
 			FileWriter newHTML = new FileWriter(fnew, false);
