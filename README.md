@@ -9,7 +9,7 @@
 You can also:
   - Change those links with ChangeYouTubeLinks.jar
   - Validate YouTube links
-  - Stream any embedable videos
+  - Stream any embeddable videos
 
 MulticulturalTV is programmed for the TV at [University Liggett School]'s Library Reference Room. Its purpose is to facilitate global education and enable the students to watch international news in different languages.
 
