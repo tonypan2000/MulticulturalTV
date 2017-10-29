@@ -1,13 +1,9 @@
-// TODO: Remove ACM dependencies
 import java.io.*;
 import java.util.*;
 import acm.program.*;
 
 public class YouTubeID extends Program {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String[] links;
 	private String file;
@@ -55,7 +51,6 @@ public class YouTubeID extends Program {
 		String currentLine = "";
 		currentLine = code.nextLine();
 		
-		// TODO: Can all of these be replaced by a comples loop?
 		while (code.hasNextLine() && !currentLine.contains("<!-- ID0 -->")) {
 			currentLine = code.nextLine();
 		}
@@ -111,7 +106,6 @@ public class YouTubeID extends Program {
 		return links;
 	}
 
-	// TODO: Can all these functions be replaced by a loop?
 	public String change1(String url) {
 		Scanner code = new Scanner(file);
 		String currentLine = code.nextLine();
