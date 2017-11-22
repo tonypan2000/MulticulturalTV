@@ -1,4 +1,3 @@
-
 import java.awt.event.ActionEvent;
 import java.io.*;
 import java.net.*;
@@ -8,9 +7,6 @@ import acm.program.GraphicsProgram;
 
 public class Validator extends GraphicsProgram {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private static final int SEPARATION = 7;
 	private static final int NUM_LINKS = 7;
@@ -33,6 +29,7 @@ public class Validator extends GraphicsProgram {
 	private JLabel valid4;
 	private JLabel valid5;
 	private JLabel valid6;
+	private JLabel validArray[];
 	private JLabel validMain;
 	private JTextField newLink;
 	private JLabel newLinkName;
@@ -62,13 +59,24 @@ public class Validator extends GraphicsProgram {
 		link4 = new JLabel("Player 4");
 		link5 = new JLabel("Player 5");
 		link6 = new JLabel("Player 6");
+		
+		// TODO: Find a cleaner way to add these all to an array that will function with the rest of the code
+		JLabel[] validArray = new JLabel[7];
 		valid1 = new JLabel("");
+		validArray[0] = valid1; // These must appear in order by number in the array
 		valid2 = new JLabel("");
+		validArray[1] = valid2;
 		valid3 = new JLabel("");
+		validArray[2] = valid3;
 		valid4 = new JLabel("");
+		validArray[3] = valid4;
 		valid5 = new JLabel("");
+		validArray[4] = valid5;
 		valid6 = new JLabel("");
+		validArray[5] = valid6;
 		validMain = new JLabel("");
+		validArray[6] = validMain; // This must always be the last element in the array
+
 		main = new JLabel("Main Player");
 		IDs = new String[NUM_LINKS];
 		newLink = new JTextField(TEXT_FIELD_SIZE);
@@ -115,56 +123,22 @@ public class Validator extends GraphicsProgram {
 				System.out.println(e);
 			}
 			update();
-		} else if (event.getSource() == checkNewLink
-				|| event.getActionCommand().equals("Validate") && !newLink.getText().equals("")) {
+		} else if (event.getSource() == checkNewLink || event.getActionCommand().equals("Validate")
+		 		&& !newLink.getText().equals("")) {
 			validateNewLink(newLink.getText());
-		} else if (event.getSource() == change1) {
+		} else if (event.getSource().toString().indexOf("change") != -1) { // TODO: Is this the right condition?
+			String num = event.getSource().toString().substring(6);
 			try {
-				valid1.setText(existence(YouTubeID.change1(newLink.getText())));
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-			update();
-		} else if (event.getSource() == change2) {
-			try {
-				valid2.setText(existence(YouTubeID.change2(newLink.getText())));
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-			update();
-		} else if (event.getSource() == change3) {
-			try {
-				valid3.setText(existence(YouTubeID.change3(newLink.getText())));
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-			update();
-		} else if (event.getSource() == change4) {
-			try {
-				valid4.setText(existence(YouTubeID.change4(newLink.getText())));
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-			update();
-		} else if (event.getSource() == change5) {
-			try {
-				valid5.setText(existence(YouTubeID.change5(newLink.getText())));
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-			update();
-		} else if (event.getSource() == change6) {
-			try {
-				valid6.setText(existence(YouTubeID.change6(newLink.getText())));
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-			update();
-		} else if (event.getSource() == changeMain) {
-			try {
-				validMain.setText(existence(YouTubeID.changeMain(newLink.getText())));
-			} catch (Exception e1) {
-				e1.printStackTrace();
+				int temp = Integer.parseInt(num);
+				validArray[temp].setText(existence(YouTubeID.change(num, newLink.getText())));
+			} catch (NumberFormatException throwaway) { // Handles validMain
+				try {
+					validMain.setText(existence(YouTubeID.change(num, newLink.getText())));
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
 			}
 			update();
 		}
@@ -172,13 +146,9 @@ public class Validator extends GraphicsProgram {
 
 	public void validate(String[] urls) throws Exception {
 		IDs = YouTubeID.showLinks();
-		valid1.setText(existence(IDs[0]));
-		valid2.setText(existence(IDs[1]));
-		valid3.setText(existence(IDs[2]));
-		valid4.setText(existence(IDs[3]));
-		valid5.setText(existence(IDs[4]));
-		valid6.setText(existence(IDs[5]));
-		validMain.setText(existence(IDs[6]));
+		for (int i = 0; i < validArray.length; i++) {
+			validArray[i].setText(existence(IDs[i]));
+		}
 	}
 
 	private String existence(String ID) throws Exception {
@@ -203,6 +173,7 @@ public class Validator extends GraphicsProgram {
 	}
 
 	private void update() {
+		// TODO: Clean this up with a loop
 		removeAll();
 		add(link1, SEPARATION, SEPARATION + Y_OFFSET);
 		double labelX = link1.getWidth() + SEPARATION * 2;

@@ -20,7 +20,7 @@ MulticulturalTV is programmed for the TV at [University Liggett School]'s Librar
 MulticulturalTV uses a number of open source tools:
 
 * [acm] - Graphics Program
-* [Java-Json] - split YouTube links to get the ID
+* [Java API for JSON Processing] - split YouTube links to get the ID
 * [Eclipse] - write the Java program
 
 And of course MulticulturalTV itself is open source with a public repository [MulticulturalTV]
@@ -29,7 +29,7 @@ And of course MulticulturalTV itself is open source with a public repository [Mu
 ### Installation
 
 ChangeYouTubeLinks.jar requires [Java Runtime Environment](https://java.com/en/) to run.
-Install [Chrome] or another Javascript enabled browser for the best experience.
+Install [Chrome] or another JavaScript enabled browser for the best experience.
 
 Open tv.html from the res/ folder to watch the videos.
 You can also create a shortcut of tv.html to make it easier.
@@ -56,7 +56,7 @@ License
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-   [Java-Json]: <http://www.oracle.com/technetwork/articles/java/json-1973242.html>
+   [Java API for JSON Processing]: <http://www.oracle.com/technetwork/articles/java/json-1973242.html>
    [acm]: <https://cs.stanford.edu/people/eroberts/jtf/javadoc/student/>
    [MulticulturalTV]: <https://github.com/tonypan2000/MulticulturalTV>
    [University Liggett School]: <https://www.uls.org/page>
