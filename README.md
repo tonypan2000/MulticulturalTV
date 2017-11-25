@@ -40,7 +40,7 @@ Want to contribute? Great!
 
 MulticulturalTV uses Java and HTML. We are looking for more YouTube channels that legally stream international news 24/7. We would love to hear any advice or complaint from you about this program.
 
-### To-dos
+### TODO
 
  - Find more links
  - Improve User Experience
@@ -48,7 +48,7 @@ MulticulturalTV uses Java and HTML. We are looking for more YouTube channels tha
 License
 ----
 
-[MIT]
+[MIT License]
 
 
 **Free Software, Heck Yeah!**
@@ -62,4 +62,4 @@ License
    [University Liggett School]: <https://www.uls.org/page>
    [Eclipse]: <https://www.eclipse.org/>
    [Chrome]: <https://www.google.com/chrome/>
-   [MIT]: <https://github.com/tonypan2000/MulticulturalTV/blob/master/LICENSE/>
+   [MIT License]: <https://github.com/tonypan2000/MulticulturalTV/blob/master/LICENSE/>
