@@ -13,8 +13,6 @@ You can also:
 
 MulticulturalTV is programmed for the TV at [University Liggett School]'s Library Reference Room. Its purpose is to facilitate global education and enable the students to watch international news in different languages.
 
-> Shaping lives that shape lives
-
 ### Tech
 
 MulticulturalTV uses a number of open source tools:
