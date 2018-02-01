@@ -29,7 +29,7 @@ And of course MulticulturalTV itself is open source with a public repository [Mu
 ### Installation
 
 ChangeYouTubeLinks.jar requires [Java Runtime Environment](https://java.com/en/) to run.
-Install [Chrome] or other Javascript enabled browser for the best experience.
+Install [Chrome] or another Javascript enabled browser for the best experience.
 
 Open tv.html from the res/ folder to watch the videos.
 You can also create a shortcut of tv.html to make it easier.
@@ -63,3 +63,4 @@ License
    [Eclipse]: <https://www.eclipse.org/>
    [Chrome]: <https://www.google.com/chrome/>
    [MIT License]: <https://github.com/tonypan2000/MulticulturalTV/blob/master/LICENSE/>
+   

@@ -97,9 +97,9 @@
 <script async src="http://www.youtube.com/iframe_api"></script>
 <script>
 var doneCount = 0;
-function checkIfDone(){
+function checkIfDone() {
 	doneCount++;
-	if(doneCount == 7){
+	if (doneCount == 7) {
 		//main.unMute();
 		setTimeout(function(){document.getElementById("video").style.visibility = "visible"}, 4000);
 	}
@@ -111,10 +111,10 @@ function checkIfDone(){
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player
       showinfo: 1,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
+      modestbranding: 1,  // Hide the YouTube logo
       loop: 0,            // Run the video in a loop
       fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
+      cc_load_policy: 0,  // Hide closed captions
       iv_load_policy: 3,  // Hide the Video Annotations
       autohide: 0         // Hide video controls when playing
     },
@@ -124,15 +124,16 @@ function checkIfDone(){
 		checkIfDone();
       },
 	  onStateChange: function(e) {
-		  if(e.data == YT.PlayerState.PAUSED){
+		  if (e.data == YT.PlayerState.PAUSED) {
 			console.log("CLICK from "+e.target.a.id);
 			var a = document.getElementById("main");
 			var b = document.getElementById(e.target.a.id);
 			a.id = e.target.a.id;
 			b.id = "main";
-			if(main){
+			if (main) {
 				main.mute();
 			}
+			  
 			e.target.unMute();
 			main = e.target;
 			main.playVideo();
@@ -147,10 +148,10 @@ function checkIfDone(){
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player
       showinfo: 1,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
+      modestbranding: 1,  // Hide the YouTube logo
       loop: 0,            // Run the video in a loop
       fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
+      cc_load_policy: 0,  // Hide closed captions
       iv_load_policy: 3,  // Hide the Video Annotations
       autohide: 0         // Hide video controls when playing
     },
@@ -160,15 +161,16 @@ function checkIfDone(){
 		checkIfDone();
       },
 	  onStateChange: function(e) {
-		  if(e.data == YT.PlayerState.PAUSED){
+		  if (e.data == YT.PlayerState.PAUSED) {
 			console.log("CLICK from "+e.target.a.id);
 			var a = document.getElementById("main");
 			var b = document.getElementById(e.target.a.id);
 			a.id = e.target.a.id;
 			b.id = "main";
-			if(main){
+			if (main) {
 				main.mute();
 			}
+			  
 			e.target.unMute();
 			main = e.target;
 			main.playVideo();
@@ -183,10 +185,10 @@ function checkIfDone(){
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player
       showinfo: 1,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
+      modestbranding: 1,  // Hide the YouTube logo
       loop: 0,            // Run the video in a loop
       fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
+      cc_load_policy: 0,  // Hide closed captions
       iv_load_policy: 3,  // Hide the Video Annotations
       autohide: 0         // Hide video controls when playing
     },
@@ -196,15 +198,16 @@ function checkIfDone(){
 		checkIfDone();
       },
 	  onStateChange: function(e) {
-		if(e.data == YT.PlayerState.PAUSED){
+		if (e.data == YT.PlayerState.PAUSED) {
 			console.log("CLICK from "+e.target.a.id);
 			var a = document.getElementById("main");
 			var b = document.getElementById(e.target.a.id);
 			a.id = e.target.a.id;
 			b.id = "main";
-			if(main){
+			if (main) {
 				main.mute();
 			}
+			
 			e.target.unMute();
 			main = e.target;
 			main.playVideo();
@@ -219,10 +222,10 @@ function checkIfDone(){
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player
       showinfo: 1,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
+      modestbranding: 1,  // Hide the YouTube logo
       loop: 0,            // Run the video in a loop
       fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
+      cc_load_policy: 0,  // Hide closed captions
       iv_load_policy: 3,  // Hide the Video Annotations
       autohide: 0         // Hide video controls when playing
     },
@@ -232,15 +235,16 @@ function checkIfDone(){
 		checkIfDone();
       },
 	  onStateChange: function(e) {
-		if(e.data == YT.PlayerState.PAUSED){
+		if (e.data == YT.PlayerState.PAUSED) {
 			console.log("CLICK from "+e.target.a.id);
 			var a = document.getElementById("main");
 			var b = document.getElementById(e.target.a.id);
 			a.id = e.target.a.id;
 			b.id = "main";
-			if(main){
+			if (main) {
 				main.mute();
 			}
+			
 			e.target.unMute();
 			main = e.target;
 			main.playVideo();
@@ -255,10 +259,10 @@ function checkIfDone(){
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player
       showinfo: 1,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
+      modestbranding: 1,  // Hide the YouTube logo
       loop: 0,            // Run the video in a loop
       fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
+      cc_load_policy: 0,  // Hide closed captions
       iv_load_policy: 3,  // Hide the Video Annotations
       autohide: 0         // Hide video controls when playing
     },
@@ -268,15 +272,16 @@ function checkIfDone(){
 		checkIfDone();
       },
 	  onStateChange: function(e) {
-		if(e.data == YT.PlayerState.PAUSED){
+		if (e.data == YT.PlayerState.PAUSED) {
 			console.log("CLICK from "+e.target.a.id);
 			var a = document.getElementById("main");
 			var b = document.getElementById(e.target.a.id);
 			a.id = e.target.a.id;
 			b.id = "main";
-			if(main){
+			if (main) {
 				main.mute();
 			}
+			
 			e.target.unMute();
 			main = e.target;
 			main.playVideo();
@@ -291,10 +296,10 @@ function checkIfDone(){
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player
       showinfo: 1,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
+      modestbranding: 1,  // Hide the YouTube logo
       loop: 0,            // Run the video in a loop
       fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
+      cc_load_policy: 0,  // Hide closed captions
       iv_load_policy: 3,  // Hide the Video Annotations
       autohide: 0         // Hide video controls when playing
     },
@@ -304,15 +309,16 @@ function checkIfDone(){
 		checkIfDone();
       },
 	  onStateChange: function(e) {
-		if(e.data == YT.PlayerState.PAUSED){
+		if (e.data == YT.PlayerState.PAUSED) {
 			console.log("CLICK from "+e.target.a.id);
 			var a = document.getElementById("main");
 			var b = document.getElementById(e.target.a.id);
 			a.id = e.target.a.id;
 			b.id = "main";
-			if(main){
+			if (main) {
 				main.mute();
 			}
+			
 			e.target.unMute();
 			main = e.target;
 			main.playVideo();
@@ -327,10 +333,10 @@ function checkIfDone(){
       autoplay: 1,        // Auto-play the video on load
       controls: 1,        // Show pause/play buttons in player
       showinfo: 1,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
+      modestbranding: 1,  // Hide the YouTube logo
       loop: 0,            // Run the video in a loop
       fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
+      cc_load_policy: 0,  // Hide closed captions
       iv_load_policy: 3,  // Hide the Video Annotations
       autohide: 0         // Hide video controls when playing
     },
@@ -341,15 +347,16 @@ function checkIfDone(){
 		checkIfDone();
 	  },
 	  onStateChange: function(e) {
-		if(e.data == YT.PlayerState.PAUSED){
+		if (e.data == YT.PlayerState.PAUSED) {
 			console.log("CLICK from "+e.target.a.id);
 			var a = document.getElementById("main");
 			var b = document.getElementById(e.target.a.id);
 			a.id = e.target.a.id;
 			b.id = "main";
-			if(main){
+			if (main) {
 				main.mute();
 			}
+			
 			e.target.unMute();
 			main = e.target;
 			main.playVideo();
